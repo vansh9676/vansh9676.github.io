@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Vansh - Personal Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Vansh - Personal Portfolio</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <header>
@@ -43,32 +43,23 @@
             <div id="resumeContent" class="resume-content" style="display: none;">
                 <div class="resume-header">
                     <h3>Vansh</h3>
-                    <p>Panipat,Harayana(India) | (+91)9671766584 | jaatvansh5556@gmail.com | linkedin.com/in/vansh kharb</p>
+                    <p>Panipat, Harayana (India) | (+91)9671766584 | jaatvansh5556@gmail.com | linkedin.com/in/vansh kharb</p>
                 </div>
 
                 <div class="resume-section">
                     <h4>Professional Summary</h4>
-                    <p>Results-driven professional with X years of experience in [Web development]. Proven track record of delivering high-quality projects and collaborating with cross-functional teams. Passionate about innovation and continuous learning.</p>
+                    <p>Results-driven professional with experience in Web development. Proven track record of delivering high-quality projects and collaborating with cross-functional teams. Passionate about innovation and continuous learning.</p>
                 </div>
 
                 <div class="resume-section">
                     <h4>Experience</h4>
                     <div class="resume-item">
-                        <h5>Junior  Developer</h5>
+                        <h5>Junior Developer</h5>
                         <p class="company">Company Name | Jan 2022 - Present</p>
                         <ul>
                             <li>Led development of key projects resulting in 40% performance improvement</li>
-                            <li>Mentored 5 junior developers and conducted code reviews</li>
+                            <li>Mentored junior developers and conducted code reviews</li>
                             <li>Collaborated with product team to define technical requirements</li>
-                        </ul>
-                    </div>
-                    <div class="resume-item">
-                        <h5>Developer</h5>
-                        <p class="company">Previous Company | Jan 2020 - Dec 2021</p>
-                        <ul>
-                            <li>Developed and maintained full-stack web applications</li>
-                            <li>Implemented responsive design across multiple platforms</li>
-                            <li>Resolved production issues and optimized database queries</li>
                         </ul>
                     </div>
                 </div>
@@ -77,21 +68,13 @@
                     <h4>Education</h4>
                     <div class="resume-item">
                         <h5>Bachelor of Science in Computer Science</h5>
-                        <p class="company">University Name | Graduated 2020</p>
+                        <p class="company">Kurukshetra University | Graduating 2025</p>
                     </div>
                 </div>
 
                 <div class="resume-section">
                     <h4>Skills</h4>
-                    <p><strong>Technical:</strong> HTML, CSS, JavaScript, React, Node.js, MongoDB, PostgreSQL<br><strong>Tools:</strong> Git, Docker, Figma, Adobe XD<br><strong>Languages:</strong> English (Fluent), Spanish (Intermediate)</p>
-                </div>
-
-                <div class="resume-section">
-                    <h4>Certifications</h4>
-                    <ul>
-                        <li>AWS Certified Cloud Practitioner</li>
-                        <li>Google UX Design Certificate</li>
-                    </ul>
+                    <p><strong>Technical:</strong> HTML, CSS, JavaScript, React, Node.js<br><strong>Tools:</strong> Git, VS Code<br><strong>Languages:</strong> English, Hindi</p>
                 </div>
             </div>
         </section>
@@ -121,8 +104,13 @@
         <section id="contact">
             <h2>Get In Touch</h2>
             <div class="contact-form">
-                <div class="message" id="responseMessage"></div>
-                <form id="contactForm">
+                
+                <form action="https://formsubmit.co/jaatvansh5556@gmail.com" method="POST">
+                    
+                    <input type="hidden" name="_next" value="https://vansh9676.github.io/portfolio/">
+                    
+                    <input type="hidden" name="_captcha" value="false">
+
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" required>
@@ -133,11 +121,12 @@
                     </div>
                     <div class="form-group">
                         <label for="subject">Subject</label>
-                        <input type="text" id="subject" name="subject" required>
+                        <input type="text" id="subject" name="_subject" required>
                     </div>
                     <div class="form-group">
                         <label for="messageText">Message</label>
-                        <textarea id="messageText" name="messageText" required></textarea>
+                        <input type="hidden" name="_template" value="table">
+                        <textarea id="messageText" name="message" required></textarea>
                     </div>
                     <button type="submit" class="btn-primary">Send Message</button>
                 </form>
@@ -146,16 +135,16 @@
             <div class="social-links">
                 <a href="https://linkedin.com" title="LinkedIn">in</a>
                 <a href="https://twitter.com" title="Twitter">𝕏</a>
-                <a href="https://github.com" title="GitHub">⚙</a>
-                <a href="mailto:your.email@example.com" title="Email">✉</a>
+                <a href="https://github.com/vansh9676" title="GitHub">⚙</a>
+                <a href="mailto:jaatvansh5556@gmail.com" title="Email">✉</a>
             </div>
         </section>
-    </div>
+        </div>
 
     <footer>
-        <p>&copy; 2024 Your Name. All rights reserved.</p>
+        <p>&copy; 2024 Vansh. All rights reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="./script.js"></script>
 </body>
 </html>
