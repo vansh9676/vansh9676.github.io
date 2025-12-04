@@ -68,8 +68,7 @@ body {
 header {
     background: linear-gradient(135deg, var(--dark) 0%, #1e3a8a 50%, var(--primary-dark) 100%);
     color: white;
-    padding: 120px 20px 80px;
-    text-align: center;
+    padding: 80px 20px;
     position: relative;
     overflow: hidden;
 }
@@ -86,9 +85,83 @@ header::before {
     z-index: 0;
 }
 
-header > * {
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
     position: relative;
     z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.header-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.header-profile {
+    flex-shrink: 0;
+}
+
+.profile-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    animation: float 3s ease-in-out infinite;
+}
+
+.profile-photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 40px rgba(99, 102, 241, 0.3);
+    animation: fadeInUp 0.8s ease;
+}
+
+.profile-card h3 {
+    font-size: 1.5em;
+    color: white;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95em;
+}
+
+.info-icon {
+    font-size: 1.3em;
+}
+
+.info-item a {
+    color: rgba(255, 255, 255, 0.95);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    word-break: break-all;
+}
+
+.info-item a:hover {
+    color: #e0e7ff;
+    text-decoration: underline;
 }
 
 header h1 {
@@ -510,6 +583,21 @@ footer p {
 }
 
 /* Responsive Design */
+@media (max-width: 968px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-text {
+        width: 100%;
+    }
+
+    header h1 {
+        font-size: 3em;
+    }
+}
+
 @media (max-width: 768px) {
     header h1 {
         font-size: 2.5em;
@@ -517,6 +605,19 @@ footer p {
 
     header p {
         font-size: 1.1em;
+    }
+
+    .profile-card {
+        margin: 0 auto;
+    }
+
+    .profile-photo {
+        width: 150px;
+        height: 150px;
+    }
+
+    .profile-card h3 {
+        font-size: 1.3em;
     }
 
     nav ul {
