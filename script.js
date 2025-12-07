@@ -62,15 +62,24 @@ English, Hindi
 }
 
 // Smooth Scroll for Navigation Links
+// Smooth Scroll for Navigation Links
 document.querySelectorAll('nav a').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
+        const href = this.getAttribute('href');
+
+        // If it's an in-page anchor (like #about), do smooth scroll
+        if (href && href.startsWith('#')) {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
         }
+        // else: normal links like "payment.html" are NOT prevented,
+        // browser will open the page normally
     });
 });
+
