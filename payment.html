@@ -16,7 +16,6 @@
             </div>
         </div>
     </header>
-
     <nav>
         <ul>
             <li><a href="index.html#about">About</a></li>
@@ -26,152 +25,29 @@
             <li><a href="index.html#contact">Contact</a></li>
         </ul>
     </nav>
+   <div class="container">
+    <section id="upi-qr-payment">
+        <h2>Pay via UPI</h2>
+        <p class="section-subtitle">Fast, simple & secure payment</p>
 
-    <div class="container">
-        <section id="payment-methods">
-            <h2>Choose Payment Method</h2>
-            <p class="section-subtitle">Select your preferred payment option</p>
-            
-            <div class="payment-grid">
-                <div class="payment-card" onclick="selectPayment('card')">
-                    <div class="payment-icon">💳</div>
-                    <h3>Credit/Debit Card</h3>
-                    <p>Visa, Mastercard, American Express</p>
-                </div>
-                
-                <div class="payment-card" onclick="selectPayment('upi')">
-                    <div class="payment-icon">📱</div>
-                    <h3>UPI Payment</h3>
-                    <p>Google Pay, PhonePe, Paytm</p>
-                </div>
-                
-                <div class="payment-card" onclick="selectPayment('netbanking')">
-                    <div class="payment-icon">🏦</div>
-                    <h3>Net Banking</h3>
-                    <p>All major banks supported</p>
-                </div>
-                
-                <div class="payment-card" onclick="selectPayment('wallet')">
-                    <div class="payment-icon">👛</div>
-                    <h3>Digital Wallet</h3>
-                    <p>PayPal, Apple Pay, Google Wallet</p>
-                </div>
-            </div>
-        </section>
+        <div class="upi-box">
+            <img src="images/upi-qr.png" alt="UPI QR Code">
 
-        <section id="payment-form-section" style="display: none;">
-            <h2>Payment Details</h2>
-            <div class="payment-container">
-                <form id="paymentForm" class="payment-form">
-                    <div class="form-header">
-                        <h3 id="methodTitle">Credit/Debit Card</h3>
-                        <button type="button" class="btn-back" onclick="backToMethods()">← Back</button>
-                    </div>
+            <p class="upi-id">UPI ID: yourname@upi</p>
 
-                    <div id="cardPayment" class="payment-method-form">
-                        <div class="form-group">
-                            <label for="cardName">Cardholder Name</label>
-                            <input type="text" id="cardName" placeholder="John Doe" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="cardNumber">Card Number</label>
-                            <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19" required>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="expiryDate">Expiry Date</label>
-                                <input type="text" id="expiryDate" placeholder="MM/YY" maxlength="5" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="cvv">CVV</label>
-                                <input type="text" id="cvv" placeholder="123" maxlength="4" required>
-                            </div>
-                        </div>
-                    </div>
+            <p class="upi-text">
+                Scan using Google Pay, PhonePe, Paytm or BHIM.<br>
+                After payment, please send the screenshot via email or WhatsApp.
+            </p>
 
-                    <div id="upiPayment" class="payment-method-form" style="display: none;">
-                        <div class="form-group">
-                            <label for="upiId">UPI ID</label>
-                            <input type="text" id="upiId" placeholder="yourname@upi" required>
-                        </div>
-                        <div class="upi-info">
-                            <p>You'll receive a verification prompt on your UPI app</p>
-                        </div>
-                    </div>
-
-                    <div id="netbankingPayment" class="payment-method-form" style="display: none;">
-                        <div class="form-group">
-                            <label for="bankSelect">Select Your Bank</label>
-                            <select id="bankSelect" required>
-                                <option value="">Choose a bank...</option>
-                                <option value="sbi">State Bank of India</option>
-                                <option value="hdfc">HDFC Bank</option>
-                                <option value="icici">ICICI Bank</option>
-                                <option value="axis">Axis Bank</option>
-                                <option value="bob">Bank of Baroda</option>
-                                <option value="other">Other Bank</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div id="walletPayment" class="payment-method-form" style="display: none;">
-                        <div class="form-group">
-                            <label for="walletEmail">Wallet Email/Phone</label>
-                            <input type="text" id="walletEmail" placeholder="your@email.com" required>
-                        </div>
-                        <div class="wallet-options">
-                            <p>You'll be redirected to your wallet provider's secure portal</p>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="amount">Amount (₹)</label>
-                        <input type="number" id="amount" placeholder="0.00" min="1" step="0.01" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" placeholder="your@email.com" required>
-                    </div>
-
-                    <div class="payment-summary">
-                        <div class="summary-row">
-                            <span>Amount:</span>
-                            <span id="summaryAmount">₹0.00</span>
-                        </div>
-                        <div class="summary-row">
-                            <span>Processing Fee:</span>
-                            <span id="summaryFee">₹0.00</span>
-                        </div>
-                        <div class="summary-row total">
-                            <span>Total:</span>
-                            <span id="summaryTotal">₹0.00</span>
-                        </div>
-                    </div>
-
-                    <button type="submit" class="btn-pay">Pay Now</button>
-                </form>
-
-                <div class="security-info">
-                    <p>🔒 Your payment is secure and encrypted</p>
-                    <p>All transactions are protected by industry-standard SSL encryption</p>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <div id="paymentModal" class="modal" style="display: none;">
-        <div class="modal-content">
-            <div class="modal-header" id="modalHeader"></div>
-            <p id="modalMessage"></p>
-            <button onclick="closeModal()" class="btn-primary">OK</button>
+            <p class="upi-note">
+                🔒 Manual verification · No auto deduction
+            </p>
         </div>
-    </div>
-
+    </section>
+</div>
     <footer>
         <p>&copy; 2024 Vansh. All rights reserved.</p>
     </footer>
-
-    <script src="./payment.js"></script>
 </body>
 </html>
