@@ -1,245 +1,84 @@
-/* Payment Page Styles */
+/* ===============================
+   UPI QR PAYMENT (NEW)
+   =============================== */
 
-#payment-methods {
+#upi-qr-payment {
     background: linear-gradient(135deg, var(--light) 0%, #f0f4ff 100%);
-}
-
-.payment-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    margin-top: 50px;
-}
-
-.payment-card {
-    background: white;
-    border: 2px solid #e2e8f0;
-    border-radius: 15px;
-    padding: 40px 20px;
+    padding: 80px 20px;
     text-align: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
-.payment-card:hover {
-    border-color: var(--primary);
-    transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(99, 102, 241, 0.2);
-}
-
-.payment-icon {
-    font-size: 3em;
-    margin-bottom: 15px;
-}
-
-.payment-card h3 {
-    color: var(--text);
-    margin: 15px 0;
-    font-size: 1.3em;
+#upi-qr-payment h2 {
+    font-size: 2rem;
     font-weight: 700;
+    color: var(--text);
+    margin-bottom: 8px;
 }
 
-.payment-card p {
+#upi-qr-payment .section-subtitle {
+    font-size: 0.95rem;
     color: var(--text-light);
-    font-size: 0.95em;
+    margin-bottom: 35px;
 }
 
-.payment-container {
-    max-width: 700px;
+/* Card */
+.upi-box {
+    max-width: 380px;
     margin: 0 auto;
     background: white;
+    padding: 30px 26px;
     border-radius: 20px;
-    padding: 50px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    border: 2px solid #e2e8f0;
+    box-shadow: 0 20px 50px rgba(99, 102, 241, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.payment-form {
-    animation: fadeInUp 0.6s ease;
+.upi-box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 30px 70px rgba(99, 102, 241, 0.2);
 }
 
-.form-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 30px;
-    padding-bottom: 20px;
-    border-bottom: 2px solid var(--primary);
+/* QR Image */
+.upi-box img {
+    width: 220px;
+    max-width: 100%;
+    margin: 22px auto;
+    display: block;
 }
 
-.form-header h3 {
+/* UPI ID */
+.upi-id {
+    font-size: 0.95rem;
+    font-weight: 700;
     color: var(--text);
-    margin: 0;
-    font-size: 1.5em;
+    margin-bottom: 10px;
 }
 
-.btn-back {
-    background: none;
-    border: none;
-    color: var(--primary);
-    font-weight: 600;
-    cursor: pointer;
-    font-size: 1em;
-    transition: all 0.3s ease;
-}
-
-.btn-back:hover {
-    color: var(--primary-dark);
-    transform: translateX(-3px);
-}
-
-.payment-method-form {
-    margin-bottom: 25px;
-}
-
-.form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-#cardNumber {
-    letter-spacing: 2px;
-    font-weight: 600;
-}
-
-#cvv {
-    letter-spacing: 2px;
-}
-
-#expiryDate {
-    letter-spacing: 1px;
-}
-
-.upi-info, .wallet-options {
-    background: #f0f4ff;
-    border-left: 4px solid var(--primary);
-    padding: 15px;
-    border-radius: 8px;
-    margin-top: 15px;
+/* Instructions */
+.upi-text {
+    font-size: 0.9rem;
+    line-height: 1.6;
     color: var(--text-light);
-    font-size: 0.95em;
 }
 
-.payment-summary {
-    background: #f8fafc;
-    border-radius: 12px;
-    padding: 20px;
-    margin: 25px 0;
-    border: 1px solid #e2e8f0;
-}
-
-.summary-row {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 12px;
-    color: var(--text-light);
-    font-size: 0.95em;
-}
-
-.summary-row.total {
-    border-top: 2px solid var(--primary);
-    padding-top: 12px;
-    font-weight: 700;
-    color: var(--primary);
-    font-size: 1.1em;
-}
-
-.btn-pay {
-    width: 100%;
-    padding: 15px;
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
-    color: white;
-    border: none;
-    border-radius: 10px;
-    font-size: 1.1em;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 20px;
-}
-
-.btn-pay:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 15px 40px rgba(99, 102, 241, 0.4);
-}
-
-.btn-pay:active {
-    transform: translateY(0);
-}
-
-.security-info {
-    text-align: center;
-    margin-top: 30px;
-    padding-top: 20px;
-    border-top: 1px solid #e2e8f0;
-    color: var(--text-light);
-    font-size: 0.9em;
-}
-
-.security-info p {
-    margin: 8px 0;
-}
-
-/* Modal Styles */
-.modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 2000;
-}
-
-.modal-content {
-    background: white;
-    border-radius: 20px;
-    padding: 40px;
-    max-width: 500px;
-    text-align: center;
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
-    animation: slideInUp 0.4s ease;
-}
-
-.modal-header {
-    font-size: 3em;
-    margin-bottom: 15px;
-}
-
-.modal-content p {
-    color: var(--text-light);
-    margin-bottom: 25px;
-    font-size: 1.05em;
-}
-
-@keyframes slideInUp {
-    from {
-        transform: translateY(50px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+/* Note */
+.upi-note {
+    margin-top: 14px;
+    font-size: 0.8rem;
+    color: #64748b;
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-    .payment-container {
-        padding: 30px 20px;
+@media (max-width: 480px) {
+    #upi-qr-payment {
+        padding: 60px 15px;
     }
-    
-    .form-row {
-        grid-template-columns: 1fr;
+
+    .upi-box {
+        padding: 24px 18px;
     }
-    
-    .form-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
+
+    .upi-box img {
+        width: 200px;
     }
 }
