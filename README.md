@@ -36,7 +36,7 @@ To run this project locally on your machine:
     Open `index.html` in your preferred web browser.
 
 ## 📬 Contact
-If you want to contact me, you can reach me at: **[Your Email Here]**
+If you want to contact me, you can reach me at: **[jaatvansh5556@gmail.com]**
 
 ---
 *Thanks for visiting my repository!*
