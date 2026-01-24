@@ -3,143 +3,549 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume | Vansh</title>
+    <title>Resume | Vansh Kharb</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
-       button {
-        background-color: #2563eb;
-        color: white;
-        border: none;
-        padding: 5px 10px;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 0.9rem;
-       }
-       button:hover {
-        background-color: #1e40af;}
+        /* Resume-specific styles */
+        .resume-page {
+            min-height: 100vh;
+            padding: 8rem 2rem 4rem;
+        }
+        
+        .resume-actions {
+            max-width: 1000px;
+            margin: 0 auto 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .resume-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: var(--color-card-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 16px;
+            padding: 4rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+        
+        .resume-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid var(--color-border);
+        }
+        
+        .resume-name {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--color-text);
+            margin-bottom: 0.5rem;
+        }
+        
+        .resume-contact {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            color: var(--color-text-light);
+            font-size: 0.95rem;
+            margin-top: 1rem;
+        }
+        
+        .resume-contact a {
+            color: var(--color-text-light);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .resume-contact a:hover {
+            color: var(--color-accent);
+        }
+        
+        .resume-contact i {
+            margin-right: 0.5rem;
+            color: var(--color-accent);
+        }
+        
+        .resume-section {
+            margin-bottom: 3rem;
+        }
+        
+        .resume-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .section-title-resume {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--color-accent);
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .section-title-resume::after {
+            content: '';
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(to right, var(--color-accent), transparent);
+        }
+        
+        .objective-text {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--color-text-light);
+        }
+        
+        .resume-item {
+            margin-bottom: 2rem;
+        }
+        
+        .item-header-resume {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.5rem;
+            gap: 1rem;
+        }
+        
+        .item-title {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--color-text);
+        }
+        
+        .item-date {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--color-accent);
+            white-space: nowrap;
+        }
+        
+        .item-company {
+            font-size: 1.05rem;
+            color: var(--color-text-light);
+            margin-bottom: 0.8rem;
+            font-style: italic;
+        }
+        
+        .resume-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .resume-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--color-text-light);
+            line-height: 1.6;
+        }
+        
+        .resume-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.65rem;
+            width: 6px;
+            height: 6px;
+            background-color: var(--color-accent);
+            border-radius: 50%;
+        }
+        
+        .project-grid {
+            display: grid;
+            gap: 2rem;
+        }
+        
+        .project-item {
+            background-color: var(--color-bg-alt);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .project-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0, 217, 255, 0.1);
+        }
+        
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 0.8rem;
+            gap: 1rem;
+        }
+        
+        .project-title-resume {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--color-text);
+        }
+        
+        .project-link {
+            color: var(--color-accent);
+            font-size: 1.2rem;
+            transition: transform 0.2s;
+            display: inline-block;
+        }
+        
+        .project-link:hover {
+            transform: scale(1.1);
+        }
+        
+        .project-description {
+            color: var(--color-text-light);
+            line-height: 1.7;
+            margin-bottom: 0.8rem;
+        }
+        
+        .skills-grid-resume {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        
+        .skill-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1rem;
+            background-color: var(--color-bg-alt);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            color: var(--color-text);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .skill-badge:hover {
+            background-color: var(--color-accent);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .education-item {
+            background-color: var(--color-bg-alt);
+            border-left: 4px solid var(--color-accent);
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        
+        .degree-name {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--color-text);
+            margin-bottom: 0.5rem;
+        }
+        
+        .institution {
+            color: var(--color-text-light);
+            font-size: 1.05rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        .download-resume {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--color-accent), var(--color-accent-hover));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 8px 24px rgba(0, 217, 255, 0.4);
+            transition: all 0.3s;
+            cursor: pointer;
+            z-index: 100;
+        }
+        
+        .download-resume:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 12px 32px rgba(0, 217, 255, 0.5);
+        }
+        
+        @media (max-width: 768px) {
+            .resume-container {
+                padding: 2rem;
+            }
+            
+            .resume-name {
+                font-size: 2.5rem;
+            }
+            
+            .resume-contact {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .item-header-resume {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .resume-actions {
+                flex-direction: column;
+            }
+            
+            .download-resume {
+                bottom: 1rem;
+                right: 1rem;
+            }
+        }
+        
+        @media print {
+            .nav,
+            .resume-actions,
+            .download-resume,
+            .grain-overlay,
+            .cursor-dot,
+            .cursor-outline {
+                display: none !important;
+            }
+            
+            .resume-page {
+                padding: 0;
+            }
+            
+            .resume-container {
+                box-shadow: none;
+                border: none;
+                padding: 0;
+            }
+            
+            body {
+                background: white;
+                color: black;
+            }
+            
+            .resume-name,
+            .section-title-resume,
+            .item-title,
+            .degree-name,
+            .project-title-resume {
+                color: black;
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- Cursor follower -->
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
 
-    <div class="bg-animation">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-        <div class="blob blob-3"></div>
-    </div>
+    <!-- Grain overlay -->
+    <div class="grain-overlay"></div>
 
-    <div class="container resume-container">
-        <div class="resume-actions">
-            <a href="index.html" class="btn btn-glass" style="padding: 10px 20px;">
-                <i class="fas fa-arrow-left"></i> Back to Home
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-mark">V</span>
+                <span class="logo-text">ansh Kharb</span>
             </a>
-            <a href="Vansh Resume.pdf" download="Vansh Resume.pdf" class="btn btn-primary" style="padding: 10px 20px;">
-                Download PDF <i class="fas fa-download" style="margin-left:8px;"></i>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html#work" class="nav-link">Work</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                <li><a href="resume.html" class="nav-link nav-link-special">Resume</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon" id="themeIcon"></i>
+                </button>
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Resume Page -->
+    <div class="resume-page">
+        <div class="resume-actions" data-animate="fade-up">
+            <a href="index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i>
+                <span>Back to Home</span>
             </a>
+            <button onclick="window.print()" class="btn btn-primary">
+                <i class="fas fa-print"></i>
+                <span>Print Resume</span>
+            </button>
         </div>
 
-        <div class="resume-paper">
-            <header class="resume-header">
-                <div>
-                    <h1>Vansh</h1>
-                    <div class="resume-title">Front-End Developer & Engineer</div>
+        <div class="resume-container" data-animate="fade-up" data-delay="100">
+            <!-- Header -->
+            <div class="resume-header">
+                <h1 class="resume-name">Vansh Kharb</h1>
+                <div class="resume-contact">
+                    <span><i class="fas fa-envelope"></i><a href="mailto:jaatvansh5556@gmail.com">jaatvansh5556@gmail.com</a></span>
+                    <span><i class="fas fa-phone"></i><a href="tel:+919671766584">+91 9671766584</a></span>
+                    <span><i class="fas fa-map-marker-alt"></i>Panipat, Haryana</span>
                 </div>
-                <div class="contact-info">
-                    <div><a href="mailto:jaatvansh5556@gmail.com">jaatvansh5556@gmail.com</a></div>
-                    <div><a href="tel:+919671766584">+91 9671766584</a></div>
-                    <div>Panipat, Haryana</div>
-                    <div><a href="https://github.com/vansh9676">github.com/vansh9676</a></div>
-                </div>
-            </header>
+            </div>
 
-            <section class="resume-section">
-                <h3>Summary</h3>
-                <p style="color: #334155;">Detail-oriented BCA Student at Kurukshetra University (6th Sem) with practical experience in Front-End Web Development. Proficient in building responsive websites using HTML5, CSS3, JavaScript, and currently expanding into the React ecosystem.</p>
-            </section>
+            <!-- Career Objective -->
+            <div class="resume-section">
+                <h2 class="section-title-resume">Career Objective</h2>
+                <p class="objective-text">
+                    Aspiring Full Stack & Android Developer with live projects. Skilled in building responsive websites and managing Android apps with local databases. Looking for a challenging internship to apply my coding skills and contribute to innovative projects.
+                </p>
+            </div>
 
-            <section class="resume-section">
-                <h3>Experience</h3>
+            <!-- Work Experience -->
+            <div class="resume-section">
+                <h2 class="section-title-resume">Work Experience</h2>
                 <div class="resume-item">
-                    <div class="item-head">
-                        <h4>Web Development Intern</h4>
-                        <span class="date">2023 - Present</span>
+                    <div class="item-header-resume">
+                        <h3 class="item-title">Frontend Development Intern</h3>
+                        <span class="item-date">Jul 2025 - Aug 2025</span>
                     </div>
-                    <div class="item-sub">InternPe (Remote)</div>
-                    <ul>
-                        <li>Completed intensive 4-week industrial training focused on modern web technologies.</li>
-                        <li>Developed 3+ responsive landing pages ensuring cross-browser compatibility.</li>
-                        <li>Gained hands-on experience with Git version control and collaborative workflows.</li>
-                        <li>Diagnosed and resolved complex HTML/CSS layout issues.</li>
+                    <p class="item-company">InternPe, Virtual</p>
+                    <ul class="resume-list">
+                        <li>Completed a 4-week intensive remote internship focused on frontend web technologies</li>
+                        <li>Designed and developed responsive web pages using HTML5, CSS3, and JavaScript</li>
+                        <li>Worked on optimizing UI components to ensure mobile responsiveness and fast loading speeds</li>
+                        <li>Collaborated with the team to fix frontend bugs and improve the overall user interface of the web application</li>
                     </ul>
                 </div>
-            </section>
+            </div>
 
-            <section class="resume-section">
-                <h3>Key Projects</h3>
-                
-                <div class="resume-item">
-                    <div class="item-head">
-                        <h4>CalcTools (calctools.co.in)</h4>
-                        <span class="date">Live Production</span>
+            <!-- Education -->
+            <div class="resume-section">
+                <h2 class="section-title-resume">Education</h2>
+                <div class="education-item">
+                    <div class="item-header-resume">
+                        <h3 class="degree-name">Bachelor of Computer Applications (BCA)</h3>
+                        <span class="item-date">2023 - 2026</span>
                     </div>
-                    <div class="item-sub">Full Stack Utility Application</div>
-                    <ul>
-                        <li>Built a comprehensive suite of calculation tools optimized for high traffic and SEO.</li>
-                        <li>Focused on Core Web Vitals to ensure sub-second load times and smooth interactivity.</li>
-                        <li><b>Live Site 👉</b><a href="https://calctools.co.in"> <button>click to see live site.</button></a></li>
-                    </ul>
+                    <p class="institution">Computer Science & Engineering</p>
+                    <p class="institution">ARYA (P. G.) COLLEGE, PANIPAT</p>
                 </div>
+            </div>
 
-                <div class="resume-item">
-                    <div class="item-head">
-                        <h4>Udharbook</h4>
-                        <span class="date">In Development</span>
+            <!-- Projects -->
+            <div class="resume-section">
+                <h2 class="section-title-resume">Projects</h2>
+                <div class="project-grid">
+                    <!-- Project 1 -->
+                    <div class="project-item">
+                        <div class="project-header">
+                            <div>
+                                <h3 class="project-title-resume">Milkbook - Dairy Ledger App</h3>
+                                <span class="item-date">Oct 2025 - Dec 2025</span>
+                            </div>
+                            <a href="#" class="project-link" target="_blank" aria-label="View project">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <p class="project-description">
+                            Built a complete Android app for milk dairy businesses. Features include OTP login, customer ledger management, and PDF report generation, SMS integration & WhatsApp integration. Developed using Kotlin and Java with local database management.
+                        </p>
                     </div>
-                    <div class="item-sub">Digital Ledger System</div>
-                    <ul>
-                        <li>Developing a digital bookkeeping solution to replace manual ledgers.</li>
-                        <li>Implementing complex logic for credit/debit management and data persistence.</li>
-                        <li><b>github repo. 👉</b><a href="https://github.com/vansh9676/Udharbook"><button > click to see repo.</button></a></li>
-                    </ul>
-                </div>
-            </section>
 
-            <section class="resume-section">
-                <h3>Education</h3>
-                <div class="resume-item">
-                    <div class="item-head">
-                        <h4>Bachelor of Computer Applications (BCA)</h4>
-                        <span class="date">Current (6th Sem)</span>
+                    <!-- Project 2 -->
+                    <div class="project-item">
+                        <div class="project-header">
+                            <div>
+                                <h3 class="project-title-resume">CalcTools.co.in | Utility & Tools</h3>
+                                <span class="item-date">Aug 2025 - Oct 2025</span>
+                            </div>
+                            <a href="https://calctools.co.in" class="project-link" target="_blank" aria-label="View project">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <p class="project-description">
+                            Developed a responsive web tools platform offering financial and health calculators. Built with HTML, CSS, and optimized JavaScript for fast performance. Focused on SEO optimization and user experience.
+                        </p>
                     </div>
-                    <div class="item-sub">Kurukshetra University, Haryana</div>
-                    <p style="font-size: 0.95rem; color: #334155;">Key Subjects: Web Technologies, Data Structures, Operating Systems.</p>
-                </div>
-            </section>
 
-            <section class="resume-section">
-                <h3>Technical Skills</h3>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                    <div>
-                        <div class="item-sub">Languages & Frameworks</div>
-                        <ul style="margin-top:0;">
-                            <li>HTML5, CSS3, JavaScript (ES6+)</li>
-                            <li>React.js (Basic/Learning)</li>
-                            <li>Node.js (Basic/Learning)</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <div class="item-sub">Tools & Platforms</div>
-                        <ul style="margin-top:0;">
-                            <li>Git & GitHub</li>
-                            <li>VS Code</li>
-                            <li>Linux (Zorin OS)</li>
-                        </ul>
+                    <!-- Project 3 -->
+                    <div class="project-item">
+                        <div class="project-header">
+                            <div>
+                                <h3 class="project-title-resume">Personal Developer Portfolio</h3>
+                                <span class="item-date">Aug 2025 - Sep 2025</span>
+                            </div>
+                            <a href="https://vansh9676.github.io" class="project-link" target="_blank" aria-label="View project">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <p class="project-description">
+                            Designed and developed a fully responsive personal portfolio website to showcase mobile and web development projects. Built using HTML5, CSS3, and JavaScript with modern animations. Hosted on GitHub Pages for high availability.
+                        </p>
                     </div>
                 </div>
-            </section>
+            </div>
+
+            <!-- Skills -->
+            <div class="resume-section">
+                <h2 class="section-title-resume">Skills</h2>
+                <div class="skills-grid-resume">
+                    <div class="skill-badge"><i class="fab fa-android"></i> Android</div>
+                    <div class="skill-badge"><i class="fab fa-java"></i> Java</div>
+                    <div class="skill-badge"><i class="fab fa-js"></i> JavaScript</div>
+                    <div class="skill-badge"><i class="fab fa-react"></i> React</div>
+                    <div class="skill-badge"><i class="fab fa-node"></i> Node.js</div>
+                    <div class="skill-badge"><i class="fab fa-bootstrap"></i> Bootstrap</div>
+                    <div class="skill-badge"><i class="fas fa-database"></i> MySQL</div>
+                    <div class="skill-badge"><i class="fab fa-php"></i> PHP</div>
+                    <div class="skill-badge"><i class="fab fa-wordpress"></i> WordPress</div>
+                    <div class="skill-badge"><i class="fab fa-html5"></i> HTML5</div>
+                    <div class="skill-badge"><i class="fab fa-css3-alt"></i> CSS3</div>
+                    <div class="skill-badge"><i class="fas fa-code"></i> Kotlin</div>
+                </div>
+            </div>
+
+            <!-- Portfolio Links -->
+            <div class="resume-section">
+                <h2 class="section-title-resume">Portfolio & Links</h2>
+                <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+                    <a href="https://vansh9676.github.io" target="_blank" class="btn btn-primary">
+                        <i class="fas fa-globe"></i>
+                        <span>Portfolio Website</span>
+                    </a>
+                    <a href="https://github.com/vansh9676" target="_blank" class="btn btn-secondary">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub Profile</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/vansh-kharb-9937ab2b6" target="_blank" class="btn btn-secondary">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn Profile</span>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
+
+    <!-- Floating Download Button -->
+    <a href="Vansh_resume.pdf" download class="download-resume" title="Download PDF Resume">
+        <i class="fas fa-download"></i>
+    </a>
+
+    <script src="script.js"></script>
 </body>
 </html>
