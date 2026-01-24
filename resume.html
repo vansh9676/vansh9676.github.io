@@ -22,6 +22,12 @@
             justify-content: space-between;
             align-items: center;
             gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .resume-actions-group {
+            display: flex;
+            gap: 1rem;
         }
         
         .resume-container {
@@ -307,6 +313,16 @@
             
             .resume-actions {
                 flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .resume-actions-group {
+                width: 100%;
+            }
+
+            .resume-actions-group .btn {
+                flex: 1;
+                justify-content: center;
             }
             
             .download-resume {
@@ -351,14 +367,11 @@
     </style>
 </head>
 <body>
-    <!-- Cursor follower -->
     <div class="cursor-dot" data-cursor-dot></div>
     <div class="cursor-outline" data-cursor-outline></div>
 
-    <!-- Grain overlay -->
     <div class="grain-overlay"></div>
 
-    <!-- Navigation -->
     <nav class="nav" id="nav">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">
@@ -384,21 +397,27 @@
         </div>
     </nav>
 
-    <!-- Resume Page -->
     <div class="resume-page">
         <div class="resume-actions" data-animate="fade-up">
             <a href="index.html" class="btn btn-secondary">
                 <i class="fas fa-arrow-left"></i>
                 <span>Back to Home</span>
             </a>
-            <button onclick="window.print()" class="btn btn-primary">
-                <i class="fas fa-print"></i>
-                <span>Print Resume</span>
-            </button>
+            
+            <div class="resume-actions-group">
+                <a href="Vansh_resume.pdf" download="Vansh_Resume.pdf" class="btn btn-primary">
+                    <i class="fas fa-download"></i>
+                    <span>Download PDF</span>
+                </a>
+                
+                <button onclick="window.print()" class="btn btn-secondary">
+                    <i class="fas fa-print"></i>
+                    <span>Print</span>
+                </button>
+            </div>
         </div>
 
         <div class="resume-container" data-animate="fade-up" data-delay="100">
-            <!-- Header -->
             <div class="resume-header">
                 <h1 class="resume-name">Vansh Kharb</h1>
                 <div class="resume-contact">
@@ -408,7 +427,6 @@
                 </div>
             </div>
 
-            <!-- Career Objective -->
             <div class="resume-section">
                 <h2 class="section-title-resume">Career Objective</h2>
                 <p class="objective-text">
@@ -416,7 +434,6 @@
                 </p>
             </div>
 
-            <!-- Work Experience -->
             <div class="resume-section">
                 <h2 class="section-title-resume">Work Experience</h2>
                 <div class="resume-item">
@@ -434,7 +451,6 @@
                 </div>
             </div>
 
-            <!-- Education -->
             <div class="resume-section">
                 <h2 class="section-title-resume">Education</h2>
                 <div class="education-item">
@@ -447,11 +463,9 @@
                 </div>
             </div>
 
-            <!-- Projects -->
             <div class="resume-section">
                 <h2 class="section-title-resume">Projects</h2>
                 <div class="project-grid">
-                    <!-- Project 1 -->
                     <div class="project-item">
                         <div class="project-header">
                             <div>
@@ -467,7 +481,6 @@
                         </p>
                     </div>
 
-                    <!-- Project 2 -->
                     <div class="project-item">
                         <div class="project-header">
                             <div>
@@ -483,7 +496,6 @@
                         </p>
                     </div>
 
-                    <!-- Project 3 -->
                     <div class="project-item">
                         <div class="project-header">
                             <div>
@@ -501,7 +513,6 @@
                 </div>
             </div>
 
-            <!-- Skills -->
             <div class="resume-section">
                 <h2 class="section-title-resume">Skills</h2>
                 <div class="skills-grid-resume">
@@ -520,7 +531,6 @@
                 </div>
             </div>
 
-            <!-- Portfolio Links -->
             <div class="resume-section">
                 <h2 class="section-title-resume">Portfolio & Links</h2>
                 <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
@@ -541,7 +551,6 @@
         </div>
     </div>
 
-    <!-- Floating Download Button -->
     <a href="Vansh_resume.pdf" download class="download-resume" title="Download PDF Resume">
         <i class="fas fa-download"></i>
     </a>
