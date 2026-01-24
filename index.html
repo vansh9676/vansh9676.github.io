@@ -3,164 +3,424 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vansh | Creative Developer</title>
+    <title>Vansh Kharb — Front-End Developer</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Cursor follower -->
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
 
-    <div class="bg-animation">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-        <div class="blob blob-3"></div>
-    </div>
+    <!-- Grain overlay -->
+    <div class="grain-overlay"></div>
 
-    <nav>
-        <div class="container nav-wrapper">
-            <a href="#" class="logo">Vansh<span class="dot">.</span></a>
-            <ul class="nav-links">
-                <li class="stagger-1"><a href="#work">Work</a></li>
-                <li class="stagger-2"><a href="#about">About</a></li>
-                <li class="stagger-3"><a href="resume.html">Resume</a></li>
-                <li class="stagger-4"><a href="#contact">Contact</a></li>
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <span class="logo-mark">V</span>
+                <span class="logo-text">ansh Kharb</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#work" class="nav-link">Work</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="resume.html" class="nav-link nav-link-special">Resume</a></li>
             </ul>
         </div>
     </nav>
 
-    <div class="container">
-        <section class="hero">
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-container">
             <div class="hero-content">
-                <span class="badge stagger-1">Front-End Developer</span>
-                <h1 class="stagger-2">Building digital <br> <span class="gradient-text">masterpieces.</span></h1>
-                <p class="stagger-3">I am a BCA student and developer focused on crafting clean, user-friendly experiences. I turn complex problems into elegant interface designs.</p>
-                <div class="btn-group stagger-4">
+                <div class="hero-label" data-animate="fade-up">
+                    <div class="label-dot"></div>
+                    <span>Available for opportunities</span>
+                </div>
+                <h1 class="hero-title" data-animate="fade-up" data-delay="100">
+                    <span class="title-line">Crafting Digital</span>
+                    <span class="title-line title-line-special">Experiences</span>
+                </h1>
+                <p class="hero-description" data-animate="fade-up" data-delay="200">
+                    Front-end developer specializing in building exceptional digital experiences. 
+                    Currently in my final year of BCA at Kurukshetra University, transforming ideas into elegant, functional interfaces.
+                </p>
+                <div class="hero-actions" data-animate="fade-up" data-delay="300">
                     <a href="#work" class="btn btn-primary">
-                        <span>View Projects</span>
-                        <i class="fas fa-arrow-right"></i>
+                        <span>Explore My Work</span>
+                        <i class="fas fa-arrow-down"></i>
                     </a>
-                    <a href="resume.html" class="btn btn-glass">
-                        <span>My Resume</span>
-                    </a>
-                </div>
-            </div>
-
-            <div class="hero-image-container stagger-3">
-                <div class="img-wrapper">
-                    <img src="./unnamed.jpg" alt="Vansh Profile">
-                    <div class="img-glow"></div>
-                </div>
-                <div class="mini-contact">
-                    <a href="mailto:jaatvansh5556@gmail.com" class="mini-link">
-                        <i class="fas fa-envelope"></i> jaatvansh5556@gmail.com
-                    </a>
-                    <a href="tel:+919671766584" class="mini-link">
-                        <i class="fas fa-phone"></i> +91 9671766584
+                    <a href="#contact" class="btn btn-secondary">
+                        <span>Get In Touch</span>
+                        <i class="fas fa-paper-plane"></i>
                     </a>
                 </div>
             </div>
-        </section>
-
-        <div class="stats-bar stagger-5">
-            <div class="stat-item">
-                <span class="stat-num">06</span>
-                <span class="stat-label">Semester (BCA)</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-num">20+</span>
-                <span class="stat-label">Projects</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-num">React</span>
-                <span class="stat-label">Current Focus</span>
+            <div class="hero-visual" data-animate="fade-left" data-delay="200">
+                <div class="profile-card">
+                    <div class="profile-image-wrapper">
+                        <img src="unnamed.jpg" alt="Vansh Kharb" class="profile-image">
+                        <div class="profile-border"></div>
+                    </div>
+                    <div class="profile-info">
+                        <h3>Vansh Kharb</h3>
+                        <p>Front-End Developer</p>
+                        <div class="profile-social">
+                            <a href="https://github.com/vansh9676" target="_blank" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/vansh-kharb-9937ab2b6" target="_blank" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="mailto:jaatvansh5556@gmail.com" aria-label="Email">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+        
+        <!-- Scroll indicator -->
+        <div class="scroll-indicator" data-animate="fade-up" data-delay="400">
+            <div class="scroll-line"></div>
+            <span>Scroll to explore</span>
+        </div>
+    </section>
 
-        <section id="work" class="section-padding">
-            <div class="section-header">
-                <h2>Featured Work</h2>
-                <p>Selected projects from my journey</p>
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat-item" data-animate="fade-up" data-delay="0">
+                <span class="stat-number" data-count="6">0</span>
+                <span class="stat-label">Semester<br>BCA Student</span>
             </div>
-            
-            <div class="grid-projects">
-                <div class="card">
-                    <div class="card-inner">
-                        <div class="card-top">
-                            <i class="fas fa-calculator card-icon"></i>
-                            <a href="https://calctools.co.in" target="_blank" class="card-link-btn"><i class="fas fa-external-link-alt"></i></a>
+            <div class="stat-divider"></div>
+            <div class="stat-item" data-animate="fade-up" data-delay="100">
+                <span class="stat-number" data-count="20">0</span>
+                <span class="stat-plus">+</span>
+                <span class="stat-label">Projects<br>Completed</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item" data-animate="fade-up" data-delay="200">
+                <span class="stat-number" data-count="100">0</span>
+                <span class="stat-plus">%</span>
+                <span class="stat-label">Dedication<br>& Passion</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Section -->
+    <section class="work" id="work">
+        <div class="work-container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-label">Portfolio</span>
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-description">A selection of my recent work showcasing technical skills and creative problem-solving</p>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <article class="project-card project-card-featured" data-animate="fade-up" data-delay="0">
+                    <div class="project-image">
+                        <div class="project-overlay"></div>
+                        <div class="project-number">01</div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag">Live Production</span>
+                            <span class="tag">Utility Suite</span>
                         </div>
-                        <h3>CalcTools</h3>
-                        <p>A live production utility suite offering real-time mathematical calculation tools. Built for speed, SEO, and high usability.</p>
-                        <div class="tags">
-                            <span>Live Site</span>
-                            <span>Utility</span>
-                            <span>Web App</span>
+                        <h3 class="project-title">CalcTools</h3>
+                        <p class="project-description">
+                            A comprehensive utility platform offering real-time mathematical calculation tools. 
+                            Built with performance optimization in mind, featuring sub-second load times and SEO-friendly architecture.
+                        </p>
+                        <div class="project-tech">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                            <span>SEO</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://calctools.co.in" target="_blank" class="project-link">
+                                <span>Visit Site</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
                         </div>
                     </div>
-                </div>
+                </article>
 
-                <div class="card">
-                    <div class="card-inner">
-                        <div class="card-top">
-                            <i class="fas fa-book-journal-whills card-icon"></i>
-                            <a href="https://github.com/vansh9676/udharbook" target="_blank" class="card-link-btn"><i class="fab fa-github"></i></a>
+                <!-- Project 2 -->
+                <article class="project-card" data-animate="fade-up" data-delay="100">
+                    <div class="project-image">
+                        <div class="project-overlay"></div>
+                        <div class="project-number">02</div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag">In Development</span>
+                            <span class="tag">Finance</span>
                         </div>
-                        <h3>Udharbook</h3>
-                        <p>Digital ledger solution replacing traditional bookkeeping. Manages credit/debit records with a focus on data accuracy.</p>
-                        <div class="tags">
-                            <span>Finance</span>
-                            <span>Ledger</span>
-                            <span>Data Mgmt</span>
+                        <h3 class="project-title">Udharbook</h3>
+                        <p class="project-description">
+                            Digital ledger application modernizing traditional bookkeeping. 
+                            Manages credit/debit transactions with emphasis on data accuracy and intuitive user experience.
+                        </p>
+                        <div class="project-tech">
+                            <span>JavaScript</span>
+                            <span>Local Storage</span>
+                            <span>PWA</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/vansh9676/udharbook" target="_blank" class="project-link">
+                                <span>View Code</span>
+                                <i class="fab fa-github"></i>
+                            </a>
                         </div>
                     </div>
-                </div>
+                </article>
 
-                <div class="card">
-                    <div class="card-inner">
-                        <div class="card-top">
-                            <i class="fas fa-layer-group card-icon"></i>
-                            <a href="https://vansh9676.github.io" target="_blank" class="card-link-btn"><i class="fas fa-external-link-alt"></i></a>
+                <!-- Project 3 -->
+                <article class="project-card" data-animate="fade-up" data-delay="200">
+                    <div class="project-image">
+                        <div class="project-overlay"></div>
+                        <div class="project-number">03</div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag">Portfolio</span>
+                            <span class="tag">Design</span>
                         </div>
-                        <h3>Portfolio V2</h3>
-                        <p>My digital identity. A fully responsive website showcasing animations, smooth scrolling, and modern CSS architecture.</p>
-                        <div class="tags">
-                            <span>Design</span>
+                        <h3 class="project-title">Portfolio V2</h3>
+                        <p class="project-description">
+                            Responsive portfolio website featuring modern CSS architecture, 
+                            smooth animations, and optimized performance. A digital showcase of my work and skills.
+                        </p>
+                        <div class="project-tech">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
                             <span>Animations</span>
-                            <span>HTML/CSS</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://vansh9676.github.io" target="_blank" class="project-link">
+                                <span>Visit Site</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-content">
+                <div class="section-header" data-animate="fade-up">
+                    <span class="section-label">Who I Am</span>
+                    <h2 class="section-title">About Me</h2>
+                </div>
+                <div class="about-text" data-animate="fade-up" data-delay="100">
+                    <p>
+                        I'm Vansh Kharb, a passionate front-end developer based in Panipat, Haryana. 
+                        Currently in my 6th semester of BCA at Kurukshetra University, I combine technical 
+                        expertise with creative design to build exceptional digital experiences.
+                    </p>
+                    <p>
+                        My journey in web development started with a curiosity about how things work on the web. 
+                        Today, I specialize in creating clean, user-friendly interfaces that not only look great 
+                        but solve real problems. I'm particularly interested in modern web technologies and 
+                        constantly expanding my skillset.
+                    </p>
+                    <p>
+                        When I'm not coding, you'll find me exploring new design trends, contributing to 
+                        open-source projects, or experimenting with the latest web technologies on my Zorin OS setup.
+                    </p>
+                </div>
+            </div>
+
+            <div class="skills-section">
+                <h3 class="skills-title" data-animate="fade-up">Technical Expertise</h3>
+                <div class="skills-grid">
+                    <div class="skill-category" data-animate="fade-up" data-delay="0">
+                        <h4>Frontend Development</h4>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <i class="fab fa-html5"></i>
+                                <span>HTML5</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-css3-alt"></i>
+                                <span>CSS3</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-js"></i>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-react"></i>
+                                <span>React (Learning)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category" data-animate="fade-up" data-delay="100">
+                        <h4>Tools & Platforms</h4>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <i class="fab fa-git-alt"></i>
+                                <span>Git</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-github"></i>
+                                <span>GitHub</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-linux"></i>
+                                <span>Linux</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-code"></i>
+                                <span>VS Code</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category" data-animate="fade-up" data-delay="200">
+                        <h4>Currently Learning</h4>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <i class="fab fa-react"></i>
+                                <span>React.js</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-node"></i>
+                                <span>Node.js</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-database"></i>
+                                <span>MongoDB</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-mobile-alt"></i>
+                                <span>Responsive Design</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="about" class="section-padding">
-            <div class="about-box">
-                <div class="about-content">
-                    <h2>About Me</h2>
-                    <p>I am Vansh, a developer based in Panipat, Haryana. Currently in my 6th Semester of BCA at Kurukshetra University, I blend technical skills with creative design.</p>
-                    <p>My toolkit includes HTML, CSS, JavaScript, and I am actively expanding into the React & Node.js ecosystem. I code on Zorin OS and love open source.</p>
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-label">Get In Touch</span>
+                <h2 class="section-title">Let's Work Together</h2>
+                <p class="section-description">
+                    I'm currently looking for new opportunities. Whether you have a question or just want to say hi, 
+                    I'll try my best to get back to you!
+                </p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item" data-animate="fade-up" data-delay="0">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <a href="mailto:jaatvansh5556@gmail.com">jaatvansh5556@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item" data-animate="fade-up" data-delay="100">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <a href="tel:+919671766584">+91 9671766584</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item" data-animate="fade-up" data-delay="200">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Location</h4>
+                            <p>Panipat, Haryana, India</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="skills-grid">
-                    <div class="skill-pill"><i class="fab fa-html5"></i> HTML5</div>
-                    <div class="skill-pill"><i class="fab fa-css3-alt"></i> CSS3</div>
-                    <div class="skill-pill"><i class="fab fa-js"></i> JavaScript</div>
-                    <div class="skill-pill"><i class="fab fa-react"></i> React (Learning)</div>
-                    <div class="skill-pill"><i class="fab fa-git-alt"></i> Git</div>
-                    <div class="skill-pill"><i class="fab fa-linux"></i> Linux</div>
+
+                <div class="contact-cta" data-animate="fade-up" data-delay="300">
+                    <h3>Ready to start a project?</h3>
+                    <p>Let's create something amazing together</p>
+                    <a href="mailto:jaatvansh5556@gmail.com" class="btn btn-primary btn-large">
+                        <span>Send Me a Message</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <footer id="contact">
-            <h2>Let's Connect</h2>
-            <div class="social-row">
-                <a href="https://github.com/vansh9676" class="social-btn"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/vansh-kharb-9937ab2b6" class="social-btn"><i class="fab fa-linkedin"></i></a>
-                <a href="mailto:jaatvansh5556@gmail.com" class="social-btn"><i class="fas fa-envelope"></i></a>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <h3>Vansh Kharb</h3>
+                    <p>Front-End Developer crafting digital experiences with passion and precision.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="#work">Work</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="resume.html">Resume</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Social</h4>
+                        <ul>
+                            <li><a href="https://github.com/vansh9676" target="_blank">GitHub</a></li>
+                            <li><a href="https://www.linkedin.com/in/vansh-kharb-9937ab2b6" target="_blank">LinkedIn</a></li>
+                            <li><a href="mailto:jaatvansh5556@gmail.com">Email</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <p class="copyright">&copy; 2026 Vansh. Crafted with passion.</p>
-        </footer>
-    </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Vansh Kharb. Crafted with <i class="fas fa-heart"></i> and lots of coffee.</p>
+                <div class="footer-social">
+                    <a href="https://github.com/vansh9676" target="_blank" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/vansh-kharb-9937ab2b6" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:jaatvansh5556@gmail.com" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
