@@ -64,6 +64,8 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     position: relative;
+       cursor: none;   /* ← add this */
+
 }
 
 body::before {
