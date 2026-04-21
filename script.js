@@ -345,3 +345,73 @@ if (prefersReducedMotion.matches) {
     // Disable smooth scroll
     document.documentElement.style.scrollBehavior = 'auto';
 }
+// ============================================
+// PROJECT CAROUSEL AUTO LOOP (FINAL)
+// ============================================
+
+function initProjectCarousel() {
+    const track = document.querySelector('.projects-track');
+    if (!track) return;
+
+    // Duplicate content for seamless loop
+    track.innerHTML += track.innerHTML;
+
+    let isHovered = false;
+
+    const container = document.querySelector('.projects-carousel');
+
+    // Pause on hover
+    container.addEventListener('mouseenter', () => {
+        isHovered = true;
+        track.style.animationPlayState = 'paused';
+    });
+
+    container.addEventListener('mouseleave', () => {
+        isHovered = false;
+        track.style.animationPlayState = 'running';
+    });
+
+    // Touch support (mobile swipe)
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    container.addEventListener('mousedown', (e) => {
+        isDown = true;
+        startX = e.pageX - container.offsetLeft;
+        scrollLeft = container.scrollLeft;
+        track.style.animationPlayState = 'paused';
+    });
+
+    container.addEventListener('mouseleave', () => {
+        isDown = false;
+    });
+
+    container.addEventListener('mouseup', () => {
+        isDown = false;
+        track.style.animationPlayState = 'running';
+    });
+
+    container.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - container.offsetLeft;
+        const walk = (x - startX) * 2;
+        container.scrollLeft = scrollLeft - walk;
+    });
+}
+
+// Init after load
+document.addEventListener('DOMContentLoaded', initProjectCarousel);
+// ===============================
+// NEW PROJECT CAROUSEL LOGIC
+// ===============================
+function initNewCarousel() {
+    const slider = document.getElementById('projectsSlider');
+    if (!slider) return;
+
+    // duplicate for infinite loop
+    slider.innerHTML += slider.innerHTML;
+}
+
+document.addEventListener('DOMContentLoaded', initNewCarousel);
